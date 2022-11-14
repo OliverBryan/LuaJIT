@@ -500,7 +500,7 @@ endif()
 target_compile_options(libluajit PRIVATE ${LJ_COMPILE_OPTIONS})
 
 # Build the luajit binary
-add_executable(luajit luajit.c)
+add_library(luajit luajit.c)
 target_link_libraries(luajit libluajit)
 if (APPLE AND LJ_64)
   target_link_libraries(luajit "-pagezero_size 10000" "-image_base 100000000")
